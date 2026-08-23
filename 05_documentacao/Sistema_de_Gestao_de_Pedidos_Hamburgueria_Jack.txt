@@ -1,0 +1,152 @@
+Sistema de Gestão de Pedidos - Hamburgueria Jack
+
+1. Visão Geral do Projeto
+
+A Hamburgueria Jack implementará um sistema integrado de gestão de pedidos que otimiza tanto o atendimento de delivery quanto o serviço presencial. A solução compreende dois módulos principais: uma plataforma web para pedidos de entrega e um sistema de comandas digitais para mesas, ambos conectados a um backend centralizado de processamento e impressão de pedidos.
+
+O objetivo é aumentar a eficiência operacional, reduzir erros de pedidos e oferecer uma experiência de compra moderna e intuitiva aos clientes.
+
+2. Módulo de Delivery
+
+2.1 Descrição Funcional
+O sistema de delivery operacionaliza todo o processo de pedidos remotos, desde o contato inicial até a entrega.
+
+2.2 Fluxo de Processo
+
+Etapa 1: Iniciação do Pedido
+- O cliente recebe uma mensagem automatizada (WhatsApp) contendo um link único para acesso ao sistema
+- O link é personalizado e garante rastreamento do cliente e histórico de pedidos
+
+Etapa 2: Navegação no Cardápio
+- Ao acessar o link, o cliente é direcionado automaticamente para a página de cardápio
+- Interface responsiva e otimizada para dispositivos móveis
+- Exibição de produtos com descrição, imagens, preços e indicação de disponibilidade
+- Funcionalidade de busca e filtros por categoria
+
+Etapa 3: Seleção e Carrinho de Compras
+- Cliente seleciona itens desejados, escolhendo quantidade e personalizações (adicionais, remoções)
+- Cada item é adicionado ao carrinho com atualização em tempo real do valor total
+- Visualização clara do resumo do pedido antes de prosseguir
+
+Etapa 4: Finalização do Pedido
+- Cliente é encaminhado para página de checkout
+- Preenchimento de dados obrigatórios:
+ - Nome completo
+ - Telefone para contato
+ - Endereço completo (CEP, rua, número, complemento, bairro)
+ - Referência de localização
+- Seleção do tipo de serviço:
+ - Entrega a domicílio (cálculo automático de taxa e tempo estimado)
+ - Retirada na loja (sem taxa de entrega, horário de retirada)
+
+Etapa 5: Processamento e Confirmação
+- Pedido é registrado no sistema e atribuído a um número único de rastreamento
+- Confirmação é enviada ao cliente via mensagem automática contendo:
+ - Número do pedido
+ - Resumo dos itens
+ - Valor total
+ - Tempo estimado de preparo e entrega
+ - Informações do motoboy (quando aplicável)
+
+2.3 Sistema de Pagamento
+O pagamento é realizado diretamente com o motoboy no momento da entrega ou retirada.
+
+Métodos aceitos:
+- Dinheiro
+- Cartão de débito/crédito (máquina portátil)
+- PIX (QR code portátil)
+
+Segurança e Reconciliação:
+- Comprovante entregue ao cliente
+- Registro de transação no sistema para reconciliação de caixa
+- Motoboy utiliza aplicativo móvel para confirmar recebimento e atualizar status
+
+3. Módulo de Atendimento Presencial
+
+3.1 Descrição Funcional
+O sistema presencial utiliza QR codes para permitir que clientes façam pedidos diretamente das mesas.
+
+3.2 Fluxo de Processo
+
+Etapa 1: Acesso ao Sistema
+- Cada mesa é identificada por um QR code único afixado em local visível
+- Cliente escaneia o código com smartphone
+- É redirecionado para versão adaptada do cardápio digital
+
+Etapa 2: Consulta do Cardápio
+- Interface otimizada para mobile, sem necessidade de aplicativo adicional
+- Cliente visualiza todos os produtos, descrições, preços e imagens
+- Filtros por categoria
+- Indicação de produtos em promoção ou indisponíveis
+
+Etapa 3: Realização do Pedido
+- Cliente seleciona itens e personalizações
+- Carrinho atualiza o valor total em tempo real
+- Revisão completa antes de confirmação
+
+Etapa 4: Processamento e Impressão
+- Pedido é automaticamente enviado para impressora térmica na cozinha
+- Ticket contém:
+ - Número único do pedido
+ - Número da mesa
+ - Lista de itens com detalhes de personalização
+ - Horário do pedido
+ - Observações especiais
+- Sistema de fila visual na cozinha para priorização
+- Notificação ao cliente quando o pedido estiver pronto
+
+Etapa 5: Entrega e Fechamento
+- Garçom recebe notificação e entrega o pedido à mesa
+- Cliente, ao terminar, pode:
+ - Permanecer na mesa e aguardar atendimento do caixa
+ - Dirigir-se voluntariamente ao caixa para encerrar
+ - Solicitar atendimento através de botão no sistema
+- Fechamento da comanda no caixa com confirmação de pagamento
+- Emissão de recibo/comprovante
+
+4. Arquitetura Técnica
+
+Frontend (Web):
+- Plataforma responsiva acessível via navegador
+- Interface adaptada para delivery e presencial
+- Sem necessidade de instalação de aplicativo
+
+Backend:
+- Servidor centralizado para processamento de pedidos
+- Banco de dados para armazenamento de clientes, pedidos e histórico
+- API de integração entre módulos
+
+Impressão:
+- Integração com impressoras térmicas na cozinha
+- Fila de impressão com priorização automática
+
+Notificações:
+- Sistema automatizado de mensagens (WhatsApp)
+- Confirmações de pedido e atualizações de status
+
+5. Benefícios Operacionais
+
+Redução de erros: Pedido confirmado digitalmente / Pedido claro e legível para cozinha
+Eficiência: Eliminação de chamadas telefônicas / Autoatendimento reduz ociosidade de garçom
+Rastreabilidade: Histórico completo de cada pedido / Registro digital de todas as comandas
+Segurança financeira: Pagamento contra entrega / Sem risco de inadimplência
+Experiência do cliente: Interface intuitiva e moderna / Autonomia no pedido, menos espera
+Análise de dados: Relatórios de vendas, produtos populares / Dados para otimização de cardápio e estoque
+
+6. Cronograma Estimado
+
+- Fase 1: Levantamento de requisitos e design (2 semanas)
+- Fase 2: Desenvolvimento do módulo de delivery (3 semanas)
+- Fase 3: Desenvolvimento do módulo presencial (2 semanas)
+- Fase 4: Integração e testes (2 semanas)
+- Fase 5: Treinamento de equipe e go-live (1 semana)
+
+Total estimado: 10 semanas
+
+7. Próximos Passos
+
+1. Apresentação e aprovação deste documento
+2. Fornecimento de dados do cardápio (produtos, preços, descrições, imagens)
+3. Definição de dados bancários para reconciliação
+4. Estabelecimento de lista de contatos para notificações automatizadas
+5. Início do desenvolvimento

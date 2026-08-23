@@ -1,0 +1,47 @@
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+
+# Environment/local config
+.env
+.env.*
+!.env.example
+
+# Java/Maven build output
+target/
+**/target/
+
+# Frontend dependencies/build output
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+
+# Local databases and generated H2 files
+data/
+**/data/
+*.mv.db
+*.lock.db
+*.trace.db
+*.h2.db
+
+# Local database backups/dumps
+03_banco_de_dados/backups_h2/
+**/backups_h2/
+
+# Generated build/runtime folders from the transferred workspace
+07_builds_e_compilados/
+08_ferramentas_runtime/
+
+# Archives and large transfer bundles
+*.zip
+*.rar
+*.7z
+
+# Logs/temp
+*.log
+tmp/
+temp/

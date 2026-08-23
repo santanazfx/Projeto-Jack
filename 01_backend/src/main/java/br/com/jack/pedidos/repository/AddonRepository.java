@@ -1,0 +1,10 @@
+package br.com.jack.pedidos.repository;
+
+import br.com.jack.pedidos.domain.AddonEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Collection;
+import java.util.List;
+
+public interface AddonRepository extends JpaRepository<AddonEntity, Long> {
+    List<AddonEntity> findByNameInAndActiveTrue(Collection<String> names);
+}
